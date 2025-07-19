@@ -6,149 +6,62 @@
     <title>İtem Response Theory (IRT) Kursu</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --dark-color: #34495e;
-            --light-color: #ecf0f1;
-            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: var(--dark-color);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            background-color: #f8f9fa;
         }
 
-        .hero-section {
-            background: var(--gradient-bg);
+        .header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
             color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .course-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
+            padding: 60px 0;
             text-align: center;
         }
 
-        .stat-number {
+        .header h1 {
             font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .header p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
         }
 
-        .lessons-section {
-            padding: 80px 0;
+        .main-content {
+            padding: 50px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-size: 2rem;
             margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
+            color: #2c3e50;
         }
 
         .lesson-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(52, 152, 219, 0.1);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
         }
 
-        .lesson-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-
-        .lesson-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .lesson-card:hover::before {
-            width: 100%;
-            opacity: 0.05;
+        .lesson-number {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
         }
 
         .lesson-header {
@@ -157,170 +70,76 @@
             margin-bottom: 1rem;
         }
 
-        .lesson-number {
-            background: var(--secondary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            margin-right: 1rem;
-            font-size: 1.1rem;
-        }
-
         .lesson-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.2rem;
-        }
-
-        .lesson-subtitle {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            font-weight: 400;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
         }
 
         .lesson-description {
-            color: #5a6c7d;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .lesson-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            color: #666;
             margin-bottom: 1rem;
         }
 
-        .tag {
-            background: rgba(52, 152, 219, 0.1);
-            color: var(--secondary-color);
+        .lesson-link {
+            background: #27ae60;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .lesson-link:hover {
+            background: #229954;
+            color: white;
+            text-decoration: none;
+        }
+
+        .difficulty {
+            float: right;
             padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
         }
 
-        .lesson-link {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .lesson-link:hover {
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            transform: translateX(5px);
-        }
-
-        .progress-section {
-            background: white;
-            padding: 60px 0;
-            margin: 60px 0;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .progress-bar-container {
-            background: var(--light-color);
-            height: 12px;
-            border-radius: 6px;
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, var(--secondary-color), var(--success-color));
-            height: 100%;
-            width: 0%;
-            border-radius: 6px;
-            transition: width 2s ease;
-            animation: progressAnimation 3s ease forwards;
-        }
-
-        @keyframes progressAnimation {
-            to { width: 100%; }
-        }
-
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-link {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--secondary-color);
-        }
-
-        .difficulty-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
         .difficulty-beginner {
-            background: rgba(39, 174, 96, 0.1);
-            color: var(--success-color);
+            background: #d5f4e6;
+            color: #27ae60;
         }
 
         .difficulty-intermediate {
-            background: rgba(243, 156, 18, 0.1);
-            color: var(--warning-color);
+            background: #fef9e7;
+            color: #f39c12;
         }
 
         .difficulty-advanced {
-            background: rgba(231, 76, 60, 0.1);
-            color: var(--accent-color);
+            background: #fadbd8;
+            color: #e74c3c;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .course-stats {
-                flex-direction: column;
-                gap: 1.5rem;
+            .header h1 {
+                font-size: 2rem;
             }
             
             .lesson-header {
@@ -331,478 +150,299 @@
             .lesson-number {
                 margin: 0 0 1rem 0;
             }
-        }
-
-        .animated {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .animated.show {
-            opacity: 1;
-            transform: translateY(0);
+            
+            .difficulty {
+                float: none;
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Header -->
+    <section class="header">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">İtem Response Theory</h1>
-                <p class="hero-subtitle">Modern Test Nəzəriyyəsi və Praktik Tətbiqi</p>
-                <p class="lead">Statistika, Psixometriya və Ölçmə Sahəsində Ən Müasir Yanaşımlar</p>
-                
-                <div class="course-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">16</span>
-                        <span class="stat-label">Dərs Modulu</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">✓</span>
-                        <span class="stat-label">TAM HAZIR</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">R</span>
-                        <span class="stat-label">Proqramlaşdırma</span>
-                    </div>
-                </div>
-            </div>
+            <h1>İtem Response Theory Kursu</h1>
+            <p>Modern Test Nəzəriyyəsi və R ilə Praktik Tətbiq - 16 Dərs</p>
         </div>
     </section>
 
-    <!-- Progress Section -->
-    <div class="container">
-        <section class="progress-section">
-            <div class="text-center">
-                <h3>Kurs Tamamlanma Dərəcəsi</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-bar"></div>
-                </div>
-                <p class="text-muted">16/16 dərs hazırdır (100% TAM)</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Lessons Section -->
-    <section class="lessons-section">
+    <!-- Main Content -->
+    <section class="main-content">
         <div class="container">
             <h2 class="section-title">Dərs Modulları</h2>
             
             <div class="row">
                 <!-- Dərs 1 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-beginner">Başlanğıc</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-beginner">Başlanğıc</span>
                         <div class="lesson-header">
                             <div class="lesson-number">1</div>
-                            <div>
-                                <div class="lesson-title">İtem Response Theory-yə Giriş</div>
-                                <div class="lesson-subtitle">IRT əsasları və tarixi inkişaf</div>
-                            </div>
+                            <div class="lesson-title">İtem Response Theory-yə Giriş</div>
                         </div>
                         <p class="lesson-description">
                             IRT nəzəriyyəsinin əsas prinsipləri, tarixi inkişafı və klassik test nəzəriyyəsindən fərqləri.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Təməl</span>
-                            <span class="tag">Nəzəriyyə</span>
-                            <span class="tag">Giriş</span>
-                        </div>
                         <a href="Ders-1.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 2 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-beginner">Başlanğıc</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-beginner">Başlanğıc</span>
                         <div class="lesson-header">
                             <div class="lesson-number">2</div>
-                            <div>
-                                <div class="lesson-title">CTT vs IRT Müqayisəsi</div>
-                                <div class="lesson-subtitle">Klassik və müasir yanaşımlar</div>
-                            </div>
+                            <div class="lesson-title">CTT vs IRT Müqayisəsi</div>
                         </div>
                         <p class="lesson-description">
-                            Klassik Test Nəzəriyyəsi ilə IRT arasındakı əsas fərqlər, üstünlüklər və məhdudiyyətlər.
+                            Klassik Test Nəzəriyyəsi ilə IRT arasındakı əsas fərqlər və praktik üstünlüklər.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Müqayisə</span>
-                            <span class="tag">CTT</span>
-                            <span class="tag">Analiz</span>
-                        </div>
                         <a href="Ders-2.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 3 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-intermediate">Orta</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-intermediate">Orta</span>
                         <div class="lesson-header">
                             <div class="lesson-number">3</div>
-                            <div>
-                                <div class="lesson-title">Rasch Modeli (1PL)</div>
-                                <div class="lesson-subtitle">Ən sadə IRT modeli</div>
-                            </div>
+                            <div class="lesson-title">Rasch Modeli (1PL)</div>
                         </div>
                         <p class="lesson-description">
                             Bir parametrli logistik model, Rasch modelinin riyazi əsasları və R-də tətbiqi.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">1PL</span>
-                            <span class="tag">Rasch</span>
-                            <span class="tag">R Kodu</span>
-                        </div>
                         <a href="Ders-3.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 4 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-intermediate">Orta</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-intermediate">Orta</span>
                         <div class="lesson-header">
                             <div class="lesson-number">4</div>
-                            <div>
-                                <div class="lesson-title">İki Parametrli Model (2PL)</div>
-                                <div class="lesson-subtitle">Diskriminasiya parametri</div>
-                            </div>
+                            <div class="lesson-title">İki Parametrli Model (2PL)</div>
                         </div>
                         <p class="lesson-description">
                             İki parametrli logistik model, item diskriminasiyası və ətraflı R analizi.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">2PL</span>
-                            <span class="tag">Diskriminasiya</span>
-                            <span class="tag">Analiz</span>
-                        </div>
                         <a href="Ders-4.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 5 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-intermediate">Orta</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-intermediate">Orta</span>
                         <div class="lesson-header">
                             <div class="lesson-number">5</div>
-                            <div>
-                                <div class="lesson-title">Üç Parametrli Model (3PL)</div>
-                                <div class="lesson-subtitle">Təsadüfi cavablama parametri</div>
-                            </div>
+                            <div class="lesson-title">Üç Parametrli Model (3PL)</div>
                         </div>
                         <p class="lesson-description">
                             Üç parametrli logistik model, guessing parametri və mürəkkəb analizlər.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">3PL</span>
-                            <span class="tag">Guessing</span>
-                            <span class="tag">Mürəkkəb</span>
-                        </div>
                         <a href="Ders-5.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 6 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-intermediate">Orta</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-intermediate">Orta</span>
                         <div class="lesson-header">
                             <div class="lesson-number">6</div>
-                            <div>
-                                <div class="lesson-title">Item İnformasiya Funksiyası</div>
-                                <div class="lesson-subtitle">Item səviyyəsində informasiya</div>
-                            </div>
+                            <div class="lesson-title">Item İnformasiya Funksiyası</div>
                         </div>
                         <p class="lesson-description">
-                            Item informasiya funksiyasının hesablanması, interpretasiyası və praktik istifadəsi.
+                            Item informasiya funksiyasının hesablanması və praktik istifadəsi.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">İnformasiya</span>
-                            <span class="tag">IIF</span>
-                            <span class="tag">Vizuallaşdırma</span>
-                        </div>
                         <a href="Ders-6.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 7 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-intermediate">Orta</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-intermediate">Orta</span>
                         <div class="lesson-header">
                             <div class="lesson-number">7</div>
-                            <div>
-                                <div class="lesson-title">Test İnformasiya Funksiyası</div>
-                                <div class="lesson-subtitle">Test səviyyəsində informasiya</div>
-                            </div>
+                            <div class="lesson-title">Test İnformasiya Funksiyası</div>
                         </div>
                         <p class="lesson-description">
                             Test informasiya funksiyası, güvenilirlik əlaqəsi və test optimallaşdırması.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">TIF</span>
-                            <span class="tag">Güvenilirlik</span>
-                            <span class="tag">Optimallaşdırma</span>
-                        </div>
                         <a href="Ders-7.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 8 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">8</div>
-                            <div>
-                                <div class="lesson-title">Qabiliyyət Təxmini</div>
-                                <div class="lesson-subtitle">Theta qiymətləndirməsi</div>
-                            </div>
+                            <div class="lesson-title">Qabiliyyət Təxmini</div>
                         </div>
                         <p class="lesson-description">
-                            Maximum Likelihood, Bayesian və EAP metodları ilə qabiliyyət səviyyəsinin təxmini.
+                            Maximum Likelihood, Bayesian və EAP metodları ilə qabiliyyət təxmini.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">ML</span>
-                            <span class="tag">Bayesian</span>
-                            <span class="tag">EAP</span>
-                        </div>
                         <a href="Ders-8.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 9 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">9</div>
-                            <div>
-                                <div class="lesson-title">Item Parameter Təxmini</div>
-                                <div class="lesson-subtitle">a, b, c parametrlərinin hesablanması</div>
-                            </div>
+                            <div class="lesson-title">Item Parameter Təxmini</div>
                         </div>
                         <p class="lesson-description">
-                            MMLE, JMLE və Bayesian metodlarla item parametrlərinin təxmin edilməsi.
+                            MMLE, JMLE və Bayesian metodlarla item parametrlərinin təxmini.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">MMLE</span>
-                            <span class="tag">JMLE</span>
-                            <span class="tag">Parameter</span>
-                        </div>
                         <a href="Ders-9.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 10 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">10</div>
-                            <div>
-                                <div class="lesson-title">Model Uyğunluğu</div>
-                                <div class="lesson-subtitle">Fit statistikaları və model seçimi</div>
-                            </div>
+                            <div class="lesson-title">Model Uyğunluğu</div>
                         </div>
                         <p class="lesson-description">
-                            Chi-square, G², AIC, BIC və digər fit indekslərinin hesablanması və interpretasiyası.
+                            Chi-square, G², AIC, BIC və digər fit indekslərinin hesablanması.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Fit</span>
-                            <span class="tag">Model Seçimi</span>
-                            <span class="tag">Statistikalar</span>
-                        </div>
                         <a href="Ders-10.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 11 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">11</div>
-                            <div>
-                                <div class="lesson-title">Test Ekvivalentliyi</div>
-                                <div class="lesson-subtitle">Linking və equating prosedurları</div>
-                            </div>
+                            <div class="lesson-title">Test Ekvivalentliyi</div>
                         </div>
                         <p class="lesson-description">
                             IRT əsaslı test linking, horizontal və vertikal equating metodları.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Linking</span>
-                            <span class="tag">Equating</span>
-                            <span class="tag">Kalibrə</span>
-                        </div>
                         <a href="Ders-11.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 12 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">12</div>
-                            <div>
-                                <div class="lesson-title">Computer Adaptive Testing</div>
-                                <div class="lesson-subtitle">CAT sistemləri və alqoritmlər</div>
-                            </div>
+                            <div class="lesson-title">Computer Adaptive Testing</div>
                         </div>
                         <p class="lesson-description">
                             Adaptiv testləşmə, item seçimi alqoritmləri və stopping kriteriyaları.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">CAT</span>
-                            <span class="tag">Adaptiv</span>
-                            <span class="tag">Alqoritmlar</span>
-                        </div>
                         <a href="Ders-12.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 13 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">13</div>
-                            <div>
-                                <div class="lesson-title">Differential Item Functioning</div>
-                                <div class="lesson-subtitle">Item bias və test fairness</div>
-                            </div>
+                            <div class="lesson-title">Differential Item Functioning</div>
                         </div>
                         <p class="lesson-description">
-                            DIF təhlili, Mantel-Haenszel və logistik reqressiya metodları, test ədalətliliyi.
+                            DIF təhlili, Mantel-Haenszel və logistik reqressiya metodları.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">DIF</span>
-                            <span class="tag">Bias</span>
-                            <span class="tag">Fairness</span>
-                        </div>
                         <a href="Ders-13.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 14 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">14</div>
-                            <div>
-                                <div class="lesson-title">Multidimensional IRT</div>
-                                <div class="lesson-subtitle">Çoxölçülü IRT modelləri</div>
-                            </div>
+                            <div class="lesson-title">Multidimensional IRT</div>
                         </div>
                         <p class="lesson-description">
-                            MIRT modelləri, kompensator və qeyri-kompensator modellər, faktör strukturları.
+                            MIRT modelləri, kompensator və qeyri-kompensator modellər.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">MIRT</span>
-                            <span class="tag">Faktör</span>
-                            <span class="tag">Çoxölçülü</span>
-                        </div>
                         <a href="Ders-14.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 15 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">15</div>
-                            <div>
-                                <div class="lesson-title">Bayesian IRT</div>
-                                <div class="lesson-subtitle">Bayesian yanaşımlar və MCMC</div>
-                            </div>
+                            <div class="lesson-title">Bayesian IRT</div>
                         </div>
                         <p class="lesson-description">
-                            Bayesian IRT modelləri, prior paylanmalar, MCMC metodları və model müqayisəsi.
+                            Bayesian IRT modelləri, prior paylanmalar və MCMC metodları.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Bayesian</span>
-                            <span class="tag">MCMC</span>
-                            <span class="tag">Prior</span>
-                        </div>
                         <a href="Ders-15.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
 
                 <!-- Dərs 16 -->
                 <div class="col-lg-6">
-                    <div class="lesson-card animated">
-                        <div class="difficulty-badge difficulty-advanced">İleri</div>
+                    <div class="lesson-card">
+                        <span class="difficulty difficulty-advanced">İleri</span>
                         <div class="lesson-header">
                             <div class="lesson-number">16</div>
-                            <div>
-                                <div class="lesson-title">İleri Tətbiqlər</div>
-                                <div class="lesson-subtitle">Real dünya tətbiqləri və case study</div>
-                            </div>
+                            <div class="lesson-title">İleri Tətbiqlər</div>
                         </div>
                         <p class="lesson-description">
-                            Real dataset təhlilləri, kompleks case study-lər və praktik məsələlərin həlli.
+                            Real dataset təhlilləri, kompleks case study-lər və praktik həllər.
                         </p>
-                        <div class="lesson-tags">
-                            <span class="tag">Case Study</span>
-                            <span class="tag">Real Data</span>
-                            <span class="tag">Tətbiq</span>
-                        </div>
                         <a href="Ders-16.html" class="lesson-link">
-                            <i class="fas fa-play"></i>
-                            Dərsə başla
+                            <i class="fas fa-play"></i> Dərsə başla
                         </a>
                     </div>
                 </div>
@@ -813,79 +453,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="https://github.com/Ttariyel-1954/irt-dersler" class="footer-link">
-                        <i class="fab fa-github"></i> GitHub Repository
-                    </a>
-                    <a href="#" class="footer-link">
-                        <i class="fas fa-download"></i> Materialları Yüklə
-                    </a>
-                    <a href="#" class="footer-link">
-                        <i class="fas fa-question-circle"></i> Dəstək
-                    </a>
-                </div>
-                <p>&copy; 2024 İtem Response Theory Kursu. Təhsil məqsədli istifadə üçündür.</p>
-                <p><small>R ilə hazırlanmış interaktiv HTML dərsləri</small></p>
-            </div>
+            <p>&copy; 2024 İtem Response Theory Kursu - <a href="https://github.com/Ttariyel-1954/irt-dersler">GitHub Repository</a></p>
+            <p><small>R ilə hazırlanmış interaktiv HTML dərsləri</small></p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script>
-        // Animated elements on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animated');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('show');
-                }
-            });
-        }
-
-        // Run animation on scroll and page load
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Add click effect to lesson cards
-        document.querySelectorAll('.lesson-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                if (!e.target.classList.contains('lesson-link')) {
-                    const link = this.querySelector('.lesson-link');
-                    if (link && !link.style.cursor === 'not-allowed') {
-                        link.click();
-                    }
-                }
-            });
-        });
-
-        // Progress bar animation
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const progressBar = document.querySelector('.progress-bar');
-                progressBar.style.width = '100%';
-            }, 1000);
-        });
-
-        // Add hover effect for completed lessons
-        document.querySelectorAll('.lesson-link').forEach(link => {
-            if (!link.style.cursor === 'not-allowed') {
-                link.addEventListener('mouseenter', function() {
-                    this.innerHTML = '<i class="fas fa-arrow-right"></i> Dərsə daxil ol';
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    this.innerHTML = '<i class="fas fa-play"></i> Dərsə başla';
-                });
-            }
-        });
-    </script>
 </body>
 </html>
